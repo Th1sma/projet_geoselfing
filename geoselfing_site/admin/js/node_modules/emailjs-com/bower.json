@@ -1,0 +1,29 @@
+{
+  "name": "emailjs-com",
+  "description": "Send emails using predefined templates and your private email account",
+  "main": "dist/email.js",
+  "authors": [
+    "Sergey Khomushin <sergey@emailjs.com> (https://www.emailjs.com)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "js email",
+    "es6 email",
+    "ts email",
+    "javascript email",
+    "typescript email",
+    "emailjs",
+    "email templates",
+    "send email",
+    "send email from js",
+    "emailjs-com"
+  ],
+  "homepage": "https://www.emailjs.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

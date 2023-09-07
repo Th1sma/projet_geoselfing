@@ -1,0 +1,1595 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  min-width: 250px;
+  box-sizing: border-box;
+  overflow: auto;
+  opacity: 0;
+  animation: fadeIn 0.2s ease-in-out 0s forwards;
+}
+
+/* Définit les étapes de l'animation de fondu */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ---------- HEADER DE PAGE ---------- */
+/* Section d'en-tête qui contient le titre principal */
+header {
+  width: 100%;
+  height: 100px;
+  background-color: #629b7c;
+}
+
+/* Titre principal dans l'en-tête */
+header h1 {
+  text-align: right;
+  padding-right: 15px;
+  margin-top: 20px;
+  font-family: 'Roboto', sans-serif;
+  color: #ececec;
+  font-size: 25px;
+}
+
+/* ---------- CONTENU DU PAGE (mise en forme) ---------- */
+/* Contenu du page */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+main {
+  flex: 1;
+  background-image: url('../images/background.png');
+  background-repeat: repeat;
+  background-position: center center;
+}
+
+
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  text-align: center;
+  margin-bottom: 3%;
+  margin-top: 2%;
+}
+
+label.required::before {
+  content: "*";
+  color: red;
+  margin-right: 2px;
+  font-weight: bold;
+}
+
+hr {
+  margin-top: 6.3%;
+}
+
+#warning {
+  color: #db5d3d;
+  font-family: 'Roboto', sans-serif;
+  font-size: medium;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Styles pour page informations site*/
+#box-informations_page {
+  background-color: #fff;
+  padding: 2%;
+  border: 1px solid #ddd;
+  margin: 5% auto;
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  box-shadow: -1px 2px 5px #9a9a9a;
+  border-radius: 10px;
+}
+
+#box-informations_page h2 {
+  margin: 10px;
+  cursor: pointer;
+  font-size: 1.5em;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+#box-informations_page h2:hover {
+  color: #467a5c;
+}
+
+#box-informations_page h2:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+#box-informations_page h2:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -3px;
+  background-color: #467a5c;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+#box-informations_page section:not(:first-of-type) {
+  display: none;
+  margin-top: 10px;
+}
+
+#box-informations_page section.active {
+  display: block;
+}
+
+/* ---------------- MENU HAMBURGER ------------- */
+#menu__toggle {
+  opacity: 0;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  text-align: center;
+  margin-bottom: 3%;
+  margin-top: 2%;
+}
+
+#menu__toggle:checked+.menu__btn>span {
+  transform: rotate(45deg);
+}
+
+#menu__toggle:checked+.menu__btn>span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+
+#menu__toggle:checked+.menu__btn>span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#menu__toggle:checked~.menu__box {
+  left: 0 !important;
+}
+
+/*Style du bouton menu*/
+.menu__btn {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bolder;
+  position: fixed;
+  color: #ececec;
+  text-shadow: 1px 1px #333;
+  top: 20px;
+  left: 30px;
+  width: 60px;
+  height: 60px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #79b192;
+  border-radius: 10%;
+}
+
+.menu__btn p {
+  margin-top: 90%;
+  font-size: medium;
+}
+
+.menu__btn>div {
+  width: 100%;
+  height: 100%;
+  background-color: #ececec;
+  transition-duration: .25s;
+}
+
+.menu__btn>span {
+  margin-top: -20px;
+}
+
+.menu__btn>span,
+.menu__btn>span::before,
+.menu__btn>span::after {
+  display: block;
+  position: absolute;
+  width: 45px;
+  height: 3px;
+  background-color: #ececec;
+  transition-duration: .25s;
+}
+
+.menu__btn>span::before {
+  content: '';
+  top: -8px;
+}
+
+.menu__btn>span::after {
+  content: '';
+  top: 8px;
+}
+
+.menu__btn:hover {
+  background-color: #467a5c;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Style du menu */
+.menu__box {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height: calc(100% - 80px);
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  text-align: left;
+  background-color: #467a5c;
+  box-shadow: -1px 2px 5px #9a9a9a;
+  transition-duration: .25s;
+}
+
+.menu__item {
+  margin-top: 5%;
+  display: block;
+  padding: 12px 24px;
+  color: #ececec;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  text-shadow: 1px 1px #5e5e5e;
+  transition-duration: .25s;
+}
+
+.menu__icon {
+  width: 20px;
+  margin-right: 5px;
+  display: inline-block;
+  text-align: center;
+}
+
+.menu__item:hover {
+  background-color: #356149;
+}
+
+li:first-child {
+  margin-top: 10%;
+}
+
+.menu__footer {
+  position: absolute;
+  bottom: 10%;
+  right: 0;
+  padding: 12px 24px;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  text-shadow: 1px 1px #3e595a;
+  transition-duration: .25s;
+}
+
+/* ---------------- FIN DE STYLE MENU HAMBURGER ------------- */
+/* -------------- STYLES POUR PAGE DE CONTACT -------------- */
+/* Formulaire de contact */
+.form-contact {
+  display: flex;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: -1px 2px 10px #9a9a9a;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.form-contact__left {
+  flex: 1;
+  background-color: #f1f1f1;
+  padding: 40px;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: -1px 2px 5px #9a9a9a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.form-contact__left h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.form-contact__left p {
+  color: #333;
+  margin: 0 0 20px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.form-contact label {
+  display: inline-block;
+  width: 120px;
+  text-align: left;
+  margin-right: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  white-space: nowrap;
+  margin-bottom: 1%;
+}
+
+.form-contact input,
+.form-contact textarea {
+  padding: 10px;
+  border: 1px solid #888;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form-contact input[type="submit"] {
+  background-color: #629b7c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5%;
+}
+
+.form-contact input[type="submit"]:hover {
+  background-color: #356149;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-contact__right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 0 10px 10px 0;
+  box-shadow: -1px 2px 5px #9a9a9a;
+  font-family: 'Roboto', sans-serif;
+}
+
+@media only screen and (max-width: 900px) {
+  .form-contact {
+    flex-direction: column;
+    max-width: 500px;
+  }
+}
+
+/* -------------- FIN DE STYLE POUR PAGE DE CONTACT -------------- */
+
+/* --------- STYLES POUR LA PAGE GROUPE ---------- */
+#bin-groupe {
+  appearance: none;
+  content: url(../images/icon_bin.png);
+  width: 20px;
+  height: 20px;
+}
+
+#bin-groupe:hover {
+  cursor: pointer;
+}
+
+.avatar-groupe {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+#ajouter_groupe {
+  background-color: #629b7c;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px 10px;
+  cursor: pointer;
+  float: left;
+  margin: 1%;
+}
+
+.buttons-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 3%;
+  margin-bottom: 1%;
+}
+
+#ajouter_groupe,
+#supprimer_tout_groupe {
+  flex: 1;
+  background-color: #629b7c;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px 10px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+#ajouter_groupe:hover {
+  background-color: #356149;
+  transition: all 0.3s ease-in-out;
+}
+
+#supprimer_tout_groupe:hover {
+  background-color: #993b24;
+  transition: all 0.3s ease-in-out;
+}
+
+#supprimer_tout_groupe {
+  background-color: #db5d3d;
+}
+
+/* Container des groupes */
+#groupes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 2%;
+}
+
+/* Style des boîtes des groupes */
+.groupe-box {
+  display: flex;
+  align-items: center;
+  background-color: #f1f1f1;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: -1px 2px 5px #9a9a9a;
+  flex: 0 0 calc(33.33% - 20px);
+  height: 100%;
+}
+
+/* Style de l'image */
+.avatar-groupe {
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+  object-fit: cover;
+}
+
+.info-groupe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.info-groupe p:nth-child(1) {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.info-groupe p:nth-child(2) {
+  margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.groupe-box input[type="checkbox"] {
+  align-self: flex-end;
+}
+
+/* Affichage en colonne sur les écrans de téléphone*/
+@media (max-width: 767px) {
+  #groupes-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .groupe-box {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+}
+
+/* --------- FIN DE STYLE POUR LA PAGE GROUPE ---------- */
+/* ---------- STYLES POUR LA PAGE PARCOURS ---------- */
+#map {
+  z-index: 0;
+  margin: 1%;
+  border-radius: 10px;
+  width: 98%;
+  height: 500px;
+}
+
+.mapboxgl-popup-content {
+  width: 200px;
+}
+
+.mapboxgl-popup h3 {
+  margin: 0;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ccc;
+}
+
+.mapboxgl-popup form {
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.mapboxgl-popup label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.mapboxgl-popup input[type="text"],
+.mapboxgl-popup textarea {
+  font-family: 'Roboto', sans-serif;
+  width: 168px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  resize: vertical;
+}
+
+.mapboxgl-popup button[type="submit"] {
+  display: block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #629b7c;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.mapboxgl-popup button[type="submit"]:hover {
+  transition: all 0.3s ease-in-out;
+  background-color: #467a5c;
+}
+
+.buttons-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+#warning-parcours {
+  width: auto;
+  background-color: #f1f1f1;
+  height: auto
+}
+
+#ajouter_parcours,
+#supprimer_tous_parcours {
+  flex: 1;
+  background-color: #629b7c;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px 10px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+#supprimer_tous_parcours {
+  background-color: #db5d3d;
+}
+
+#ajouter_parcours:hover {
+  transition: all 0.3s ease-in-out;
+  background-color: #467a5c;
+}
+
+#supprimer_tous_parcours:hover {
+  background-color: #993b24;
+  transition: all 0.3s ease-in-out;
+}
+
+/* ----------- STYLES TABLEAU DE POINT (PAGE POINTS) ------------ */
+/* Définition de l'icône de la corbeille */
+
+.parcours-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 1%;
+}
+
+.parcours-table {
+  border-collapse: collapse;
+  background-color: #f2f2f2;
+  font-family: 'Roboto', sans-serif;
+  flex-basis: calc(50% - 10px);
+  /* Soustraire la marge de 10px */
+  box-sizing: border-box;
+  padding: 10px;
+  margin-top: 2%;
+}
+
+.parcours-table:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+  transition: transform 0.5s ease-out;
+  box-shadow: -1px 2px 10px #9a9a9a;
+}
+
+.parcours-table caption {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+
+}
+
+.parcours-table input[type="checkbox"] {
+  appearance: none;
+  content: url(../images/icon_bin.png);
+  width: 20px;
+  height: 20px;
+}
+
+.parcours-table input[type="checkbox"]:hover {
+  cursor: pointer;
+}
+
+.parcours-table th,
+.parcours-table td {
+  border: 1px solid #ddd;
+  padding: 5px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.parcours-table th {
+  background-color: #dedede;
+  font-weight: bold;
+}
+
+.parcours-table tbody tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+
+/* Version sur tél du tableau avec valeurs (page gest-points*/
+@media screen and (max-width: 768px) {
+
+  .parcours-table th {
+    font-size: small;
+  }
+
+  .parcours-table td {
+    font-size: small;
+  }
+
+  .parcours-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 1%;
+  }
+}
+
+/* ----------- FIN DE STYLE TABLEAU DE POINT (PAGE POINTS) ------------ */
+/* ---------- FIN DE STYLE POUR LA PAGE PARCOURS ---------- */
+
+/* ----------- STYLES POUR FENETRE POP-UP ------------ */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #f1f1f1;
+  margin: auto;
+  margin-top: 15%;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.modal input[type="text"] {
+  border-radius: 5px;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #888;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.modal #groupe {
+  border-radius: 5px;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #888;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 5%;
+}
+
+/* Style pour le bouton "Enregistrer" */
+.modal input[type="button"] {
+  background-color: #629b7c;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.modal input[type="button"]:hover {
+  background-color: #356149;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Style pour les libellés des champs de saisie */
+.modal label {
+  display: inline-block;
+  width: 120px;
+  text-align: left;
+  margin-right: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+label[for="longitude"] {
+  margin-top: 2%;
+}
+
+label[for="nom"] {
+  margin-top: 2%;
+}
+
+label[for="question"] {
+  margin-top: 2%;
+}
+
+label[for="nom_parcours"] {
+  margin-top: 2%;
+}
+
+#avatar_groupe {
+  border-radius: 5px;
+  background-color: #fff;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #888;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 5%;
+}
+
+/* Styles pour le bouton pour fermer la boîte de dialogue modale */
+.close {
+  top: 0;
+  left: 0;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ----------- FIN DE STYLE POUR FENETRE POP-UP ------------ */
+
+/* ----------- STYLES POUR PAGE DASHBOARD ------------ */
+/* mise en forme des box dans le container principale */
+.container-dashboard {
+  position: static;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 100%;
+  margin-left: 1%;
+  margin-right: 1%;
+  z-index: 1;
+}
+
+.container-dashboard .box {
+  padding: 1%;
+  border: 1px solid #888;
+  box-sizing: border-box;
+  margin-bottom: 2%;
+  border-radius: 10px;
+  box-shadow: -1px 2px 10px #9a9a9a;
+}
+
+
+.container-dashboard .box:hover {
+  transform: scale(1.02);
+  transition: transform 0.5s ease-out;
+}
+
+/* config des box 1 à 4*/
+.container-dashboard .box1,
+.container-dashboard .box2,
+.container-dashboard .box3,
+.container-dashboard .box4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(25% - 20px);
+  padding: 2%;
+  height: 15%;
+  background-color: #fff;
+  box-sizing: border-box;
+  margin-top: 1%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* config box 5 à 8 */
+.container-dashboard .box5 {
+  width: calc(67% - 20px);
+  height: calc(60vh - 20px);
+  background-color: #fff;
+  overflow: hidden;
+  padding: 0;
+  z-index: 0;
+}
+
+.container-dashboard .box6 {
+  width: calc(33% - 20px);
+  height: calc(60vh - 20px);
+  background-color: #fff;
+  overflow: scroll;
+  padding: 0;
+}
+
+/* Disparition de la scroll bar */
+.container-dashboard .box6::-webkit-scrollbar {
+  display: none;
+}
+
+.container-dashboard .box7,
+.container-dashboard .box8 {
+  width: calc(50% - 20px);
+  height: calc(35vh - 20px);
+  background-color: #fff;
+  overflow: hidden;
+  padding: 0;
+  max-height: 250px;
+}
+
+/* Affichage map pour box5 */
+.map-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#map-dashboard {
+  width: 100%;
+  height: 100%;
+}
+
+/* Style pour le tableau des derniers groupes */
+.box6 .groupe-box-dashboard {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: -1px 2px 5px #9a9a9a;
+  border: 1px solid #ffffff;
+  height: auto;
+  width: 100%;
+}
+
+.box6 .avatar-groupe-dashboard {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.box6 .info-groupe-dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bolder;
+}
+
+.box6 .info-groupe-dashboard p:nth-child(1) {
+  margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif;
+  color: #356149;
+}
+
+.box6 .info-groupe-dashboard p:nth-child(2) {
+  margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.content-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: 0;
+}
+
+#informations-dashboard,
+#questions-dashboard,
+#groupes-dashboard {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+/* Style pour le tableau ( RECAP QUESTIONS ) */
+.box7 #questions-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Roboto', sans-serif;
+}
+
+.box7 .question-id {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.box7 #questions-table thead th {
+  background-color: #e2e2e2;
+  padding: 10px;
+  text-align: left;
+}
+
+.box7 #questions-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.box7 #questions-table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.box7 #questions-table td {
+  padding: 10px;
+}
+
+/* Style reglage / informations page dashboard */
+.box8 #table-infos {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Roboto', sans-serif;
+  height: 160px;
+}
+
+.box8 #table-infos thead th {
+  background-color: #e2e2e2;
+  padding: 10px;
+  text-align: left;
+}
+
+.box8 #table-infos td {
+  padding: 10px;
+}
+
+.box8 input[type="file"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 50%;
+  cursor: pointer;
+}
+
+.box8 input[type="file"]:hover {
+  background-color: #e2e2e2;
+  transition: all 0.3s ease-in-out;
+}
+
+.box8 #csv_upload {
+  background-color: #629b7c;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 50%;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.box8 #csv_upload:hover {
+  background-color: #467a5c;
+  transition: all 0.3s ease-in-out;
+}
+
+.box8 #supprimer_votes_score {
+  background-color: #db5d3d;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 100%;
+  cursor: pointer;
+}
+
+.box8 #supprimer_votes_score:hover {
+  background-color: #993b24;
+  transition: all 0.3s ease-in-out;
+}
+
+
+/******************
+/* style pour les box 1 à 4 */
+.box1 .title h2,
+.box2 .title h2,
+.box3 .title h2,
+.box4 .title h2 {
+  margin: 0;
+  font-size: 1.6vw;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  white-space: nowrap;
+}
+
+.box1 .title p,
+.box2 .title p,
+.box3 .title p,
+.box4 .title p {
+  margin: 0;
+  font-size: 1.3vw;
+  font-family: 'Roboto', sans-serif;
+  color: #888;
+}
+
+.box #value-gagnant,
+.box1 #value-parcours,
+.box2 #value-groupe,
+.box3 #value-question,
+.box4 #value {
+  font-size: 4vw;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  padding-left: 10px;
+
+}
+
+/* header pour les box 5 à 8 */
+.box-max-header {
+  width: 100%;
+  height: 40px;
+  background-color: #629b7c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.box-max-header-2 {
+  width: 100%;
+  height: 40px;
+  background-color: #629b7c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.box-max-header-2 h2,
+.box-max-header h2 {
+  margin: 0;
+  font-size: 1.5vw;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .box .title p {
+    display: none;
+  }
+
+  .box .title h2 {
+    font-size: 15px;
+  }
+
+  .box #value-gagnant,
+  .box #value-parcours,
+  .box #value-question,
+  .box #value-groupe {
+    font-size: 28px;
+    padding: 0%;
+    margin-left: -1%;
+    transform: scale(1.5);
+  }
+
+  .box #value {
+    font-size: 28px;
+    padding: 0%;
+  }
+
+  .box-max-header-2 h2,
+  .box-max-header h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+  }
+
+  .box {
+    flex-direction: column;
+
+  }
+
+  .container-dashboard {
+    flex-wrap: wrap;
+  }
+
+  .container-dashboard .box1,
+  .container-dashboard .box2,
+  .container-dashboard .box3,
+  .container-dashboard .box4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(25% - 2px);
+    padding: 2%;
+    height: 15%;
+    background-color: #fff;
+    box-sizing: border-box;
+    margin-top: 1%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .container-dashboard .box5,
+  .container-dashboard .box6,
+  .container-dashboard .box7,
+  .container-dashboard .box8 {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+/* ----------- STYLES DE PAGE QUESTIONNAIRE ------------*/
+.container-questionnaire {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.creation-question {
+  margin: 2%;
+  width: 70%;
+  max-width: 95%;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: -1px 2px 5px #9a9a9a;
+}
+
+.creation-question label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: medium;
+}
+
+.creation-question input[type="text"],
+.creation-question input[type="radio"] {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.creation-question #question {
+  color: #db5d3d;
+  font-size: large;
+}
+
+.creation-question input[type="text"] {
+  width: 95%;
+}
+
+.creation-question input[type="checkbox"]:disabled {
+  background-color: #993b24;
+  color: #993b24;
+}
+
+.creation-question #ajouter_question_button {
+  background-color: #629b7c;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 1%;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+}
+
+#ajouter_question_button:hover {
+  background-color: #467a5c;
+}
+
+.creation-question #supprimer_questionnaire_button {
+  background-color: #db5d3d;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 1%;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+#supprimer_questionnaire_button:hover {
+  background-color: #993b24;
+  transition: all 0.3s ease-in-out;
+}
+
+#barre-separation {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+#supprimer-question {
+  background-color: #db5d3d;
+  border: none;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 1%;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 20%;
+}
+
+#supprimer-question:hover {
+  background-color: #993b24;
+  transition: all 0.3s ease-in-out;
+}
+
+.image-question {
+  width: 200px;
+  height: 100px;
+  align-items: center;
+}
+
+#input-image-question {
+  padding: 10px;
+  border: 1px solid #888;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 100%;
+  cursor: pointer;
+  margin-bottom: 5%;
+  background-color: #fff;
+}
+
+/* styles pour le recap des questions à droite */
+.question-recap {
+  width: 30%;
+  max-width: 95%;
+  margin-right: 2%;
+  margin: 2%;
+  background-color: #467a5c;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: -1px 2px 5px #9a9a9a;
+  font-family: 'Roboto', sans-serif;
+}
+
+.recherche {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+#resultat {
+  font-size: 1rem;
+  margin-bottom: 2px;
+  color: #fff;
+}
+
+.recherche input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  width: auto;
+}
+
+.recherche button {
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #629b7c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: auto;
+}
+
+.recherche button:hover {
+  background-color: #ccc;
+  transition: all 0.3s ease-in-out;
+}
+
+.question-recap h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.question-recap hr {
+  border-color: #fff;
+}
+
+.question-recap #reponse {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  color: #fff;
+  font-style: italic;
+  margin-bottom: 5%;
+}
+
+.question-recap #question {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.question-recap button:hover {
+  background-color: #ccc;
+}
+
+.question-recap ul {
+  list-style: none;
+  padding: 0;
+}
+
+.question-recap li {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  color: #333;
+  cursor: pointer;
+}
+
+.question-recap li:hover {
+  background-color: #dfdfdf;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .container-questionnaire {
+    flex-direction: column;
+  }
+
+  .creation-question {
+    width: 100%;
+  }
+
+  .question-recap {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+/*Revenir en haut de page*/
+.scroll-top {
+  z-index: 1049;
+  position: fixed;
+  bottom: 3%;
+  right: 3%;
+  background: #5e5e5e;
+  opacity: 0.6;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+}
+
+.scroll-top i {
+  color: #f1f1f1;
+}
+
+.scroll-top:hover {
+  background-color: #222;
+}
+
+.spinner {
+  margin: 30px auto;
+  width: 50px;
+  text-align: center;
+}
+
+/* chargement attente recherche */
+.spinner>div {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0.6)
+  }
+
+  40% {
+    -webkit-transform: scale(1)
+  }
+}
+
+@keyframes sk-bouncedelay {
+
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
+  }
+
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+/* ----------- FIN DE STYLE DASHBOARD ------------ */
+/* ----------- STYLES DU BAS DE PAGE -----------*/
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #333;
+  color: #ececec;
+  bottom: 0%;
+  width: 100%;
+  position: relative;
+}
+
+/* Conteneur des liens */
+footer ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-bottom: 2%;
+}
+
+/* Style des éléments de la liste */
+footer li {
+  font-family: 'Roboto', sans-serif;
+  margin-right: 20px;
+}
+
+/* Style du premier élément de la liste */
+footer ul li:first-child {
+  margin-top: 0px;
+  /* Réglage 1er li */
+}
+
+/* Style des liens */
+footer a {
+  color: #ececec;
+  text-decoration: none;
+}
+
+/* Style du texte en bas de page */
+footer p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bolder;
+  margin-top: 2%;
+}
+
+/* ----------- FIN DE STYLE BAS DE PAGE -----------*/

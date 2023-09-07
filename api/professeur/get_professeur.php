@@ -1,0 +1,51 @@
+<?php
+// Headers requis
+header("Access-Control-Allow-Origin: *");
+header("Content-type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Methods: GET");
+header("Access-Control-Max-Age: 3600");
+header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
+
+// Vérification que la méthode utilisée est correcte
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+
+    // Appel de la database et de la table professeur
+    $handle = new SQLite3("../geoselfing.db");
+    $tables = array("professeur");
+
+    // Séléctionne avec une requête SELECT 
+    foreach ($tables as $table) {
+
+        // Initialise un tableau assiociatif
+        $data = [];
+        $data['professeur'] = [];
+        $result = $handle->query("SELECT * FROM professeur");
+
+        while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+            extract($row);
+
+            $extract_professeur = [
+                "id" => $id,
+                "identifiant" => $identifiant,
+                "mot_de_passe" => $mot_de_passe
+            ];
+
+            $data['professeur'][] = $extract_professeur;
+        }
+
+        // Envoie du code réponse 200-OK
+        http_response_code(200);
+
+        // Envoie de la réponse en json
+        echo json_encode($data, JSON_PRETTY_PRINT);
+    }
+
+
+} else {
+    // Si la méthode n'est pas "GET"
+    http_response_code(405);
+    echo json_encode(["message" => "La méthode n'est pas autorisée."], JSON_UNESCAPED_UNICODE);
+}
+
+?>

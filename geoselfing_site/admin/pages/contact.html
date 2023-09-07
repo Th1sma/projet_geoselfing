@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Geoselfing</title>
+  <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+  <script>
+    // Initialisation avec l'API emailJS
+    emailjs.init("JOlZBscSUjtsRRXh3");
+  </script>
+  <script src="../js/script.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <!-- HEADER DE PAGE GENERIQUE-->
+    <header>
+      <div class="hamburger-menu">
+        <input id="menu__toggle" type="checkbox"/>
+        <label class="menu__btn" for="menu__toggle">
+          <span></span>
+          <p>Menu</p>
+        </label>
+        <h1>GEOSELFING</h1>
+        <!-- LES ONGLETS DU MENU -->
+        <ul class="menu__box">
+          <hr>
+          <li><a class="menu__item" href="dashboard.html"><i class="fas fa-newspaper menu__icon"></i> DASHBOARD</a></li>
+          <li><a class="menu__item" href="groupes.html"><i class="fas fa-people-arrows menu__icon"></i> GROUPES</a></li>
+          <li><a class="menu__item" href="parcours.html"><i class="fas fa-route menu__icon"></i> PARCOURS</a></li>
+          <li><a class="menu__item" href="questionnaire.html"><i class="fas fa-question menu__icon"></i>QUESTIONNAIRE</a></li>
+          <li><a class="menu__item" href="../../eleve/pages/page_classement.html"><i class="fas fa-person-booth menu__icon"></i> CLASSEMENT</a></li>
+          <li><a class="menu__item" href="contact.html"><i class="fas fa-paper-plane menu__icon"></i> CONTACT</a></li>
+          <hr>
+          <div class="menu__footer">GEOSELFING</div>
+        </ul>
+      </div>
+    </header>
+    <!-- CONTENUE DE LA PAGE-->
+    <main>
+      <h1>NOUS CONTACTER</h1>
+      <div class="form-contact">
+        <div class="form-contact__left">
+          <h2>Notre formulaire de contact</h2>
+          <p>Nous sommes disponibles pour répondre à toutes vos questions et vous fournir l'assistance nécessaire. Remplissez le formulaire ci-dessous et nous vous contacterons rapidement. <br><br>Votre satisfaction est notre priorité !<br><br><br></p>
+          <p>Email : contact@geoselfing.com</p>
+        </div>
+        <div class="form-contact__right">
+          <!-- FORMULAIRE DE CONTACT -->
+          <form id="formulaire-contact">
+            <label for="name" class="required">Nom :</label>
+            <input type="text" id="nom" name="nom" required>
+            <label for="email" class="required">Email :</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message" class="required">Message :</label>
+            <textarea id="message" name="message" required></textarea>
+            <input type="submit" value="Envoyer" onclick="valider_formulaire(this.form)">
+          </form>
+        </div>
+      </div>
+      <script src="../js/script_contact.js"></script>
+    </main>
+    <!-- BAS DE PAGE GENERIQUE -->
+    <footer>
+      <div class="footer-container">
+        <p>Copyright &copy; 2023 - GEOSELFING</p>
+        <ul>
+          <li><a href="politiques_&_conditions.html#politiques">Politique de confidentialité</a></li>
+          <li><a href="politiques_&_conditions.html#conditions">Conditions d'utilisation</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
