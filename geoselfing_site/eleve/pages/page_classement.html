@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Geoselfing</title>
+    <meta name='viewport'
+        content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="stylesheet" type="text/css" href="../css/page_classement.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 class="titre">Classement</h1>
+        </header>
+        <main>
+
+            <div class="podium">
+
+                <!-- Animation confetti -->
+                <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+                <script>
+                    function generateConfetti() {
+                        for (let i = 0; i <= Math.floor(Math.random() * 8); i++) {
+                            confetti({
+                                origin: {
+                                    x: Math.random(),
+                                    y: Math.random() - 0.1
+                                }
+                            });
+                        }
+                    }
+
+                    generateConfetti();
+
+                    setInterval(() => {
+                        generateConfetti();
+                    }, 3000);
+                </script>
+
+                <div class="second-place">
+                    <div id="top2"></div>
+                    🥈
+                </div>
+
+                <div class="first-place">
+                    <div id="top1"></div>
+                    🥇
+                </div>
+
+                <div class="third-place">
+                    <div id="top3"></div>
+                    🥉
+                </div>
+
+
+                <script src="../js/script_page_classement.js"></script>
+
+            </div>
+
+        </main>
+        <footer>
+
+            <div class="footer-container">
+                <p>Copyright &copy; 2023 - GEOSELFING</p>
+                <ul>
+                    <li><a href="politiques_&_conditions.html#politiques">Politique de confidentialité</a></li>
+                    <li><a href="politiques_&_conditions.html#conditions">Conditions d'utilisation</a></li>
+                </ul>
+            </div>
+
+        </footer>
+    </div>
+</body>
+
+</html>

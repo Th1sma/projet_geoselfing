@@ -1,0 +1,384 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Fond de page */
+.body_vote {
+    background-color: #629b7c;
+    height: 100%;
+}
+
+/* Titre */
+.titre_vote {
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Rectangle à cloner n fois (n = nombre de groupe) */
+.rect_blanc {
+    background-color: white;
+    height: 200px;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 30px;
+    display: flex;
+    position: relative;
+}
+
+.rect_blanc button {
+    background-color: rgb(13, 153, 213);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100px;
+    height: 35px;
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+}
+
+/* Espace entre chaque rect_blanc */
+.vert {
+    background-color: #629b7c;
+    height: 4vh;
+}
+
+/* Rectangle blanc où il y a le bouton envoyer */
+.rect_blanc_envoyer {
+    background-color: white;
+    height: 70px;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 30px;
+    display: flex;
+    position: relative;
+}
+
+.envoyer {
+    background-color: rgb(13, 153, 213);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100px;
+    height: 35px;
+    position: absolute;
+    bottom: 25%;
+    right: 5%;
+}
+
+/* --------------------------- */
+/* Cacher les input type radio */
+input[type="radio"] {
+    display: none;
+}
+
+/* etoile groupe */
+.rate1,
+.rate2,
+.rate3,
+.rate4,
+.rate5,
+.rate6,
+.rate7,
+.rate8,
+.rate9,
+.rate10 {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+    position: absolute;
+    bottom: 10%;
+    left: 4%;
+}
+
+.rate1:not(:checked)>input,
+.rate2:not(:checked)>input,
+.rate3:not(:checked)>input,
+.rate4:not(:checked)>input,
+.rate5:not(:checked)>input,
+.rate6:not(:checked)>input,
+.rate7:not(:checked)>input,
+.rate8:not(:checked)>input,
+.rate9:not(:checked)>input,
+.rate10:not(:checked)>input {
+    position: absolute;
+}
+
+.rate1:not(:checked)>label,
+.rate2:not(:checked)>label,
+.rate3:not(:checked)>label,
+.rate4:not(:checked)>label,
+.rate5:not(:checked)>label,
+.rate6:not(:checked)>label,
+.rate7:not(:checked)>label,
+.rate8:not(:checked)>label,
+.rate9:not(:checked)>label,
+.rate10:not(:checked)>label {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
+}
+
+.rate1:not(:checked)>label:before,
+.rate2:not(:checked)>label:before,
+.rate3:not(:checked)>label:before,
+.rate4:not(:checked)>label:before,
+.rate5:not(:checked)>label:before,
+.rate6:not(:checked)>label:before,
+.rate7:not(:checked)>label:before,
+.rate8:not(:checked)>label:before,
+.rate9:not(:checked)>label:before,
+.rate10:not(:checked)>label:before {
+    content: '★ ';
+}
+
+.rate1>input:checked~label,
+.rate2>input:checked~label,
+.rate3>input:checked~label,
+.rate4>input:checked~label,
+.rate5>input:checked~label,
+.rate6>input:checked~label,
+.rate7>input:checked~label,
+.rate8>input:checked~label,
+.rate9>input:checked~label,
+.rate10>input:checked~label {
+    color: #ffc700;
+}
+
+.rate1:not(:checked)>label:hover,
+.rate1:not(:checked)>label:hover~label,
+
+.rate2:not(:checked)>label:hover,
+.rate2:not(:checked)>label:hover~label,
+
+.rate3:not(:checked)>label:hover,
+.rate3:not(:checked)>label:hover~label,
+
+.rate4:not(:checked)>label:hover,
+.rate4:not(:checked)>label:hover~label,
+
+.rate5:not(:checked)>label:hover,
+.rate5:not(:checked)>label:hover~label,
+
+.rate6:not(:checked)>label:hover,
+.rate6:not(:checked)>label:hover~label,
+
+.rate7:not(:checked)>label:hover,
+.rate7:not(:checked)>label:hover~label,
+
+.rate8:not(:checked)>label:hover,
+.rate8:not(:checked)>label:hover~label,
+
+.rate9:not(:checked)>label:hover,
+.rate9:not(:checked)>label:hover~label,
+
+.rate10:not(:checked)>label:hover,
+.rate10:not(:checked)>label:hover~label {
+    color: #deb217;
+}
+
+.rate1>input:checked+label:hover,
+.rate1>input:checked+label:hover~label,
+.rate1>input:checked~label:hover,
+.rate1>input:checked~label:hover~label,
+.rate1>label:hover~input:checked~label,
+
+.rate2>input:checked+label:hover,
+.rate2>input:checked+label:hover~label,
+.rate2>input:checked~label:hover,
+.rate2>input:checked~label:hover~label,
+.rate2>label:hover~input:checked~label,
+
+.rate3>input:checked+label:hover,
+.rate3>input:checked+label:hover~label,
+.rate3>input:checked~label:hover,
+.rate3>input:checked~label:hover~label,
+.rate3>label:hover~input:checked~label,
+
+.rate4>input:checked+label:hover,
+.rate4>input:checked+label:hover~label,
+.rate4>input:checked~label:hover,
+.rate4>input:checked~label:hover~label,
+.rate4>label:hover~input:checked~label,
+
+.rate5>input:checked+label:hover,
+.rate5>input:checked+label:hover~label,
+.rate5>input:checked~label:hover,
+.rate5>input:checked~label:hover~label,
+.rate5>label:hover~input:checked~label,
+
+.rate6>input:checked+label:hover,
+.rate6>input:checked+label:hover~label,
+.rate6>input:checked~label:hover,
+.rate6>input:checked~label:hover~label,
+.rate6>label:hover~input:checked~label,
+
+.rate7>input:checked+label:hover,
+.rate7>input:checked+label:hover~label,
+.rate7>input:checked~label:hover,
+.rate7>input:checked~label:hover~label,
+.rate7>label:hover~input:checked~label,
+
+.rate8>input:checked+label:hover,
+.rate8>input:checked+label:hover~label,
+.rate8>input:checked~label:hover,
+.rate8>input:checked~label:hover~label,
+.rate8>label:hover~input:checked~label,
+
+.rate9>input:checked+label:hover,
+.rate9>input:checked+label:hover~label,
+.rate9>input:checked~label:hover,
+.rate9>input:checked~label:hover~label,
+.rate9>label:hover~input:checked~label,
+
+.rate10>input:checked+label:hover,
+.rate10>input:checked+label:hover~label,
+.rate10>input:checked~label:hover,
+.rate10>input:checked~label:hover~label,
+.rate10>label:hover~input:checked~label{
+    color: #c59b08;
+}
+
+/*--------------------------*/
+/* pages modales */
+.modal_g1,
+.modal_g2,
+.modal_g3,
+.modal_g4,
+.modal_g5,
+.modal_g6,
+.modal_g7,
+.modal_g8,
+.modal_g9,
+.modal_g10 {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-content_g1,
+.modal-content_g2,
+.modal-content_g3,
+.modal-content_g4,
+.modal-content_g5,
+.modal-content_g6,
+.modal-content_g7,
+.modal-content_g8,
+.modal-content_g9,
+.modal-content_g10 {
+    background-color: white;
+    margin: auto;
+    margin-top: 1%;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 95%;
+    height: 95%;
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+
+.close_g1,
+.close_g2,
+.close_g3,
+.close_g4,
+.close_g5,
+.close_g6,
+.close_g7,
+.close_g8,
+.close_g9,
+.close_g10 {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close_g1:hover,
+.close_g1:focus,
+.close_g2:hover,
+.close_g2:focus,
+.close_g3:hover,
+.close_g3:focus,
+.close_g4:hover,
+.close_g4:focus,
+.close_g5:hover,
+.close_g5:focus,
+.close_g6:hover,
+.close_g6:focus,
+.close_g7:hover,
+.close_g7:focus,
+.close_g8:hover,
+.close_g8:focus,
+.close_g9:hover,
+.close_g9:focus,
+.close_g10:hover,
+.close_g10:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ----------STYLES DU BAS DE PAGE ----------*/
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333;
+    color: #ececec;
+    bottom: 0%;
+    width: 100%;
+    position: relative;
+}
+
+/* Conteneur des liens */
+footer ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-bottom: 2%;
+}
+
+/* Style des éléments de la liste */
+footer li {
+    font-family: 'Roboto', sans-serif;
+    margin-right: 20px;
+}
+
+/* Style du premier élément de la liste */
+footer ul li:first-child {
+    margin-top: 0px;
+}
+
+/* Style des liens */
+footer a {
+    color: #ececec;
+    text-decoration: none;
+}
+
+/* Style du texte en bas de page */
+footer p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    margin-top: 2%;
+}

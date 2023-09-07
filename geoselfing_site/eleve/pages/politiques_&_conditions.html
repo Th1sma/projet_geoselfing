@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Geoselfing</title>
+  <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+    integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../admin/css/style.css">
+  <script src="../../admin/js/script.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <!-- HEADER DE PAGE GENERIQUE-->
+    <header>
+      <div class="hamburger-menu">
+      <h1>GEOSELFING</h1>
+    </header>
+    <!-- CONTENUE DE LA PAGE-->
+    <main>
+      <div id="box-informations_page">
+        <h2 class="titre" id="politiques" data-target="politiques-confidentialite">Politique de confidentialité</h2>
+        <h2 class="titre" id ="conditions" data-target="conditions-utilisations">Conditions d'utilisation</h2>
+        <!-- PAGE DE POLITIQUE DE CONFIDENTIALITE -->
+        <section id="politiques-confidentialite" class="content">
+          <hr>
+          <h3>Collecte des informations personnelles :</h3>
+          <p>Nous collectons certaines informations personnelles lorsque vous vous inscrivez sur notre site :
+            identifiant pouvant contenir votre nom et/ou votre prénom.</p>
+          <h3>Utilisation des informations personnelles :</h3>
+          <p>Les informations que nous collectons auprès de vous peuvent etre utilisés pour vous connecter au site et
+            pour vous identifier au pret de nos services.</p>
+          <h3>Protection des informations personnelles :</h3>
+          <p>Nous ne divulguons pas vos informations personnelles à des tiers.</p>
+        </section>
+        <!-- PAGE DE CONDITIONS D'UTILISATIONS -->
+        <section id="conditions-utilisations" class="content">
+          <hr>
+          <h3>Les conditions d'utilisation de notre site sont les suivantes :</h3>
+          <p>Ce site est destiné à une utilisation à but scolaire. Ce site à été réalisé dans le cadre du projet informatique de fin d'année.</p>
+          <p>Les créateurs sont : Mathis NIVEAU, Charly MERCIER, Guillaume TOURNAN, Yael WOJCIK. <br></p>
+        </section>
+      </div>
+    </main>
+    <script>
+      const titres = document.querySelectorAll("#box-informations_page h2[data-target]");
+      const sections = document.querySelectorAll("#box-informations_page section.content");
+
+      // On masque toutes les sections sauf la première
+      for (let i = 1; i < sections.length; i++) {
+        sections[i].style.display = "none";
+      }
+
+      // On ajoute un écouteur d'événement à chaque 
+      titres.forEach(titre => {
+        titre.addEventListener("click", function () {
+          const target = this.getAttribute("data-target");
+          sections.forEach(section => {
+            if (section.getAttribute("id") === target) {
+              section.style.display = "block";
+            } else {
+              section.style.display = "none";
+            }
+          });
+        });
+      });
+    </script>
+    <!-- BAS DE PAGE GENERIQUE -->
+    <footer>
+      <div class="footer-container">
+        <p>Copyright &copy; 2023 - GEOSELFING</p>
+        <ul>
+          <li><a href="politiques_&_conditions.html#politiques">Politique de confidentialité</a></li>
+          <li><a href="politiques_&_conditions.html#conditions">Conditions d'utilisation</a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
