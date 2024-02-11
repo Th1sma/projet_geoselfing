@@ -18,3 +18,8 @@ Conception et réalisation de l'interface dédiée aux administrateurs, garantis
 Fonctionnalités Administratives
 
 Mise en œuvre des fonctionnalités administratives pour assurer la gestion efficace du contenu du site.
+
+----------------
+
+## Auteur
+Ce projet a été développé par Th1sma (et ses collaborateurs).
